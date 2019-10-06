@@ -1,0 +1,41 @@
+.wrap {
+  padding: 20px;
+}
+
+.label {
+  background: #ddd;
+  display: block;
+  width: 20%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #888;
+  float: left;
+  font-size: 16px;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  padding: 14px 0;
+  line-height: 1;
+}
+.label + .label {
+  border-left: none;
+}
+
+.radio {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.radio:checked {
+  background: #b7b7b7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) inset;
+}
+.radio:focus {
+  outline: none;
+}
