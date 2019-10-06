@@ -3,15 +3,15 @@
 }
 
 .label {
-  background: #ddd;
-  display: block;
+  background: #fff;
+  /* display: block; */
   width: 20%;
   text-align: center;
   position: relative;
   z-index: 1;
-  border: 1px solid #888;
+  border: 1px solid #aaa;
   float: left;
-  font-size: 16px;
+  font-size: 1.5em;
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   padding: 14px 0;
   line-height: 1;
@@ -19,8 +19,16 @@
 .label + .label {
   border-left: none;
 }
+.label:first-child{
+  border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.label:last-child{
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 
-.radio {
+input {
   appearance: none;
   -webkit-appearance: none;
   display: block;
@@ -32,10 +40,10 @@
   bottom: 0;
   z-index: -1;
 }
-.radio:checked {
+input:checked {
   background: #b7b7b7;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) inset;
 }
-.radio:focus {
+input:focus {
   outline: none;
 }
