@@ -1,15 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese');
+
+body{
+  font-family: 'Roboto', 'Noto Sans JP' , sans-serif;
+  font-size: 16px;
+}
+
+.headder {
+  text-align: center;
+}
+
+
+.event-select{
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .dropbtn {
-  background-color: #4CAF50;
+  min-width: 70px;
+  font-size: 1.2em;
+  background-color: #11c4d4;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 10px;
   border: none;
+  border-bottom: solid 4px #0c4e8c;
+  border-radius: 9px;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .dropdown-content {
@@ -17,7 +37,6 @@
   position: absolute;
   background-color: #f1f1f1;
   min-width: 100%;
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
   z-index: 1;
 }
 
@@ -32,4 +51,4 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #0c4e8c;}
