@@ -31,8 +31,19 @@
 
   <div id="count-record">
     <p>現在のレコード数</p>
-    <p class="odometer" id="target">10000<p>
+    <p class="odometer" id="target">100000<p>
   </div>
+
+  <div id="category">
+    <p>区分からランキングを検索</p>
+    <div class="buttons">
+      <a class="button" href="#">男子短水路</a>
+      <a class="button" href="#">男子長水路</a>
+      <a class="button" href="#">女子短水路</a>
+      <a class="button" href="#">女子長水路</a>
+    </div>
+  </div>
+
 
   <footer>
     <p>CREATED BY REO KANZAKI</p>
@@ -40,10 +51,10 @@
 
   <script src="odometer.min.js"></script>
   <script>
-    // var odometer = document.getElementById("target");
-    // window.onload = function() {
-    //   odometer.innerHTML = 21331;
-    // };
+    var odometer = document.getElementById("target");
+    window.onload = function() {
+      odometer.innerHTML = 410010;
+    };
   </script>
 </body>
 
