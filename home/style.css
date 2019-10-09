@@ -3,10 +3,13 @@
 body{
   font-family: 'Roboto', 'Noto Sans JP' , sans-serif;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header{
-  height: 60px;
+  height: 10vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -50,52 +53,26 @@ header{
   width: 100%;
 }
 
-.headder {
+#count-record {
   text-align: center;
-}
-
-
-.event-select{
-  display: flex;
-  justify-content: space-around;
-}
-
-
-.dropbtn {
-  min-width: 70px;
   font-size: 1.2em;
-  background-color: #11c4d4;
-  color: white;
   padding: 10px;
-  border: solid 0.5px white;
-  border-bottom: solid 4px #0c4e8c;
-  border-radius: 9px;
+  line-height: 1.5;
 }
 
-.dropdown {
-  position: relative;
-  /* display: inline-block; */
+#target{
+  font-size: 2em;
 }
 
-.dropdown-content {
-  text-align: center;
-  display: none;
-  position: absolute;
-  background-color: #DDF5FF;
-  min-width: 100%;
-  z-index: 1;
+footer{
+    margin-top: auto;
+    font-size: 80%; /*フォントサイズの指定*/
+    width: 100%;    /*横幅の指定*/
+    text-align: center; /*文字の中央寄せ*/
+    padding: 15px;
+    background-color: #313131;  /*背景色の指定*/
 }
-
-.dropdown-content a {
-  border: solid 0.5px white;
-  color: black;
-  padding: 10px;
-  text-decoration: none;
-  display: block;
+footer p{
+    color: #fff;    /*文字色の指定*/
+    letter-spacing: 5px;    /*文字と文字の間隔をあける*/
 }
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #0c4e8c;}
