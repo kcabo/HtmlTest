@@ -14,13 +14,14 @@ table{
   table-layout: fixed;
   width: 100%;
   background-color: #fff;
-  line-height: 60%;
+  /* line-height: 60%; */
   text-align:center;
 }
 
-table th,table td{
+table td{
   /* margin: 5px auto; */
-  padding: 15px 0;
+  /* padding: 15px 0; */
+  height: 30px;
   border-top: 1.8px solid #fff;
   background-color: #fafafa;
 }
@@ -36,7 +37,7 @@ table th{
 }
 
 table th:nth-child(1){
-  width: 9%;
+  width: 30px;
 }
 /* table th:nth-child(3){
   width: 20%;
@@ -68,4 +69,5 @@ span{
 
 table tr:hover{
   background-color: #d4f0fd;
+  z-index: 1;
 }
