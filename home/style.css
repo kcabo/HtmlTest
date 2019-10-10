@@ -54,10 +54,67 @@ header{
 }
 
 #count-record {
+  position: relative;
   text-align: center;
   font-size: 1.2em;
   padding: 10px;
   line-height: 1.5;
+  background-color: #c8eff4;
+  z-index: -2
+}
+
+.back figure{
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  width: 10vw;
+  height: 1pt;
+  background-color: #fff;
+  z-index: -1;
+
+  animation: arrow 500ms linear infinite;
+}
+
+.back figure:nth-child(1){
+  top: 13%;
+  animation-delay: 100ms;
+  animation-duration: 300ms;
+}
+
+.back figure:nth-child(2){
+  top: 29%;
+  animation-delay: 400ms;
+  animation-duration: 600ms;
+}
+
+.back figure:nth-child(3){
+  top: 35%;
+  animation-delay: 200ms;
+  animation-duration: 500ms;
+}
+
+.back figure:nth-child(4){
+  top: 58%;
+  animation-delay: 500ms;
+  animation-duration: 400ms;
+}
+
+.back figure:nth-child(5){
+  top: 89%;
+  animation-delay: 300ms;
+  animation-duration: 500ms;
+}
+
+
+@-webkit-keyframes arrow {
+  from {
+    -webkit-transform: translateX(-20vw);
+            /* transform: rotate(0deg) translateY(-20vh); */
+  }
+  to {
+    -webkit-transform: translateX(100vw);
+            /* transform: rotate(0deg) translateY(120vh); */
+  }
 }
 
 #target{
