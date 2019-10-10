@@ -1,0 +1,48 @@
+.rain {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.rain > div {
+  /* -webkit-animation: rain 500ms linear infinite; */
+          animation: rain 500ms linear infinite;
+  background-color: #6EF3FF;
+  position: absolute;
+  left: 0;
+  top: 50vh;
+  width: 40vw;
+  height: 2px;
+  /* -webkit-transform-origin: center center;
+          transform-origin: center center; */
+}
+.rain > div:nth-child(1) {
+  /* -webkit-animation-delay: 100ms; */
+          /* animation-delay: 100ms; */
+  /* -webkit-animation-duration: 500ms; */
+          animation-duration: 1000ms;
+  top: 50vh;
+}
+@-webkit-keyframes rain {
+  from {
+    -webkit-transform: translateX(-20vw);
+            /* transform: rotate(0deg) translateY(-20vh); */
+  }
+  to {
+    -webkit-transform: translateX(120vw);
+            /* transform: rotate(0deg) translateY(120vh); */
+  }
+}
+
+/* @keyframes rain {
+  from {
+    -webkit-transform: rotate(0deg) translateY(-20vh);
+            transform: rotate(0deg) translateY(-20vh);
+  }
+  to {
+    -webkit-transform: rotate(0deg) translateY(120vh);
+            transform: rotate(0deg) translateY(120vh);
+  }
+} */

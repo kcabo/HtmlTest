@@ -5,7 +5,7 @@ body{
   font-size: 15px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 header{
@@ -49,7 +49,7 @@ header{
 }
 
 #hero img{
-  padding-top: 50px;
+  padding-top: 10vh;
   width: 100%;
 }
 
@@ -80,7 +80,7 @@ header{
 .button {
   display: inline-block;
   width: 40%;
-  height: 54px;
+  height: 45px;
   margin: 5px;
   text-decoration: none;
   outline: none;
@@ -89,7 +89,7 @@ header{
   background-color: #fff;
   border: 2px solid #333;
   color: #333;
-  line-height: 50px;
+  line-height: 40px;
   overflow: hidden;
 }
 .button:hover {
