@@ -59,50 +59,47 @@ header{
   font-size: 1.2em;
   padding: 10px;
   line-height: 1.5;
-  background-color: #c8eff4;
-  z-index: -2
 }
 
 .back figure{
   position: absolute;
   top: 20px;
-  left: 80px;
+  left: -10vw;
   width: 10vw;
-  height: 1pt;
-  background-color: #fff;
+  height: 0.5pt;
+  background-color: #48ccf4;
   z-index: -1;
-
-  animation: arrow 500ms linear infinite;
+  animation: arrow 800ms linear infinite;
 }
 
 .back figure:nth-child(1){
   top: 13%;
   animation-delay: 100ms;
-  animation-duration: 300ms;
+  animation-duration: 400ms;
 }
 
 .back figure:nth-child(2){
   top: 29%;
   animation-delay: 400ms;
-  animation-duration: 600ms;
+  animation-duration: 800ms;
 }
 
 .back figure:nth-child(3){
   top: 35%;
   animation-delay: 200ms;
-  animation-duration: 500ms;
+  animation-duration: 650ms;
 }
 
 .back figure:nth-child(4){
   top: 58%;
-  animation-delay: 500ms;
-  animation-duration: 400ms;
+  animation-delay: 300ms;
+  animation-duration: 500ms;
 }
 
 .back figure:nth-child(5){
-  top: 89%;
-  animation-delay: 300ms;
-  animation-duration: 500ms;
+  top: 78%;
+  animation-delay: 450ms;
+  animation-duration: 550ms;
 }
 
 
@@ -118,7 +115,7 @@ header{
 }
 
 #target{
-  font-size: 2em;
+  font-size: 3em;
 }
 
 #category{
@@ -132,22 +129,28 @@ header{
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 5px;
+  letter-spacing: 1px;
 }
 
 .button {
   display: inline-block;
   width: 40%;
-  height: 45px;
+  /* height: 45px; */
   margin: 5px;
   text-decoration: none;
   outline: none;
   position: relative;
   z-index: 2;
   background-color: #fff;
-  border: 2px solid #333;
-  color: #333;
+  border: 2px solid #3498db;
+  color: #3498db;
   line-height: 40px;
   overflow: hidden;
+  border-radius: 5px;
+}
+.button.women {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
 }
 .button:hover {
   color: #fff;
@@ -163,15 +166,19 @@ header{
 }
 .button:hover::after {
   top: 0;
-  background-color: #333;
+  background-color: #3498db;
+}
+.button.women:hover::after {
+  top: 0;
+  background-color: #e74c3c;
 }
 
 .button,
 .button::before,
 .button::after {
-  -webkit-box-sizing: border-box;
+  /* -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   -webkit-transition: all .3s;
   transition: all .3s;
 }
