@@ -207,7 +207,7 @@ footer p{
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 20px;
+  left: 15px;
   margin: auto;
 }
 
@@ -223,27 +223,26 @@ footer p{
   bottom: 0;
   margin: auto;
   display: inline-block;
-  width: 30px;
-  height: 22px;
+  height: 20px;
   vertical-align: middle;
 }
 
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 30px;/*長さ*/
-  border-radius: 3px;
-  background: #aaa;
+  height: 3.5px;/*線の太さ*/
+  width: 32px;/*長さ*/
+  /* border-radius: 3px; */
+  background: #34495e;
   display: block;
   content: '';
   cursor: pointer;
 }
 #nav-open span:before {
-  bottom: -8px;
+  bottom: -9px;
 }
 #nav-open span:after {
-  bottom: -16px;
+  bottom: -18px;
 }
 
 /*閉じる用の薄黒カバー*/
