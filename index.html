@@ -2,94 +2,53 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width">
-  <title>Swimmers'Zero</title>
-  <meta name="description" content="競泳のランキングを毎日更新します。">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> -->
+
   <link rel="stylesheet" href="style.css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Roboto:500&display=swap&subset=japanese" rel="stylesheet"> -->
-  <link rel="icon" href="favicon.png">
+
 </head>
 
 <body>
-  <h1><a href="pulldown/index.html">link</a></h1>
-  <p>
-    <a href="home/index.html">link</a>
-  </p>
-  <table>
-  <tr>
-    <th>順位</th>
-    <th>氏名</th>
-    <th>所属</th>
-    <th>学年</th>
-    <th>タイム</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>風間心来</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td><span>中学1</span></td>
-    <td>1:01.06</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>田中礼士</td>
-    <td>ﾌﾞﾙｰｱｰｽ甲府</td>
-    <td>高2</td>
-    <td>1:32.84</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>大柴幸太郎</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td>中2</td>
-    <td>1:01.44</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>風間心来</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td>中1</td>
-    <td>1:01.06</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>田中礼士</td>
-    <td>ﾌﾞﾙｰｱｰｽ甲府</td>
-    <td>高2</td>
-    <td>1:32.84</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>大柴幸太郎</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td>中2</td>
-    <td>1:01.44</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td>風間心来</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td>中1</td>
-    <td>1:01.06</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td>田中礼士</td>
-    <td>ﾌﾞﾙｰｱｰｽ甲府</td>
-    <td>高2</td>
-    <td>1:32.84</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td>大柴幸太郎</td>
-    <td>ﾌｨｯﾂ竜王</td>
-    <td>中2</td>
-    <td>1:01.44</td>
-  </tr>
-</table>
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
