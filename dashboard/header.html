@@ -36,7 +36,9 @@
     </div>
     <span class="uk-label men">男子</span>
     <span class="uk-label univ">大学２</span>
-
+    <div class="radar-container">
+      <canvas id="styleRadar" width="400" height="400"></canvas>
+    </div>
     <canvas id="myChart" width="400" height="400"></canvas>
 
 
@@ -67,6 +69,54 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    var ctx = document.getElementById("styleRadar").getContext('2d');
+    var data = [10, 10, 4, 2, 13]
+    var radar = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['自由形', '背泳ぎ', '平泳ぎ', 'バタフライ', ['個人    ','メドレー']],
+        datasets: [{
+          data: data,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderWidth: 2,
+          pointBorderColor: "#fff",
+          pointBorderWidth: 1
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: true,
+          text: '各種目の出場数',
+          padding: 3,
+          fontSize: 16
+        },
+        scale: {
+          pointLabels: {
+            fontSize: 10,
+            fontColor: "#555"
+          },
+          ticks: {
+            fontColor: "#999",
+            suggestedMin: 0,
+          },
+          gridLines: {
+            color: "#666",
+            lineWidth: 0.5
+          },
+          angleLines: {
+            color: "#666",
+            lineWidth: 0.5
+          }
+        }
+      }
+    });
+  </script>
   <script>
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
