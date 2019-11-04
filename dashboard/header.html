@@ -36,9 +36,15 @@
     </div>
     <span class="uk-label men">男子</span>
     <span class="uk-label univ">大学２</span>
-    <div class="radar-container">
-      <canvas id="styleRadar" width="400" height="400"></canvas>
+
+
+    <div class="line-container">
+      <canvas id="lineChart" width="400" height="400"></canvas>
     </div>
+    <div class="radar-container">
+      <canvas id="radar" width="400" height="400"></canvas>
+    </div>
+
     <canvas id="myChart" width="400" height="400"></canvas>
 
 
@@ -70,12 +76,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
-    var ctx = document.getElementById("styleRadar").getContext('2d');
+    var ctx = document.getElementById("radar").getContext('2d');
     var data = [10, 10, 4, 2, 13]
     var radar = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: ['自由形', '背泳ぎ', '平泳ぎ', 'バタフライ', ['個人    ','メドレー']],
+        labels: ['自由形', '背泳ぎ', '平泳ぎ', 'バタフライ', ['個人    ', 'メドレー']],
         datasets: [{
           data: data,
           borderColor: 'rgba(54, 162, 235, 1)',
@@ -112,6 +118,46 @@
           angleLines: {
             color: "#666",
             lineWidth: 0.5
+          }
+        }
+      }
+    });
+  </script>
+  <script>
+    var ctx = document.getElementById("lineChart").getContext('2d');
+    var e1 = [{
+      t: new Date('2019-04-02'),
+      y: 34
+    }, {
+      t: new Date('2019-06-19'),
+      y: 10
+    }, {
+      t: new Date('2019-09-27'),
+      y: 27
+    }];
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [{
+          lineTension: 0,
+          fill: false,
+          data: e1,
+          borderColor: "rgb(75, 192, 192)",
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            // type: 'time',
+            distribution: 'series',
+            time: {
+              unit: 'day',
+              displayFormat: 'MM DD'
+            }
+            // position: 'bottom'
+          }],
+          ticks: {
+            source: data
           }
         }
       }
