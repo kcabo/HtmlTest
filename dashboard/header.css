@@ -28,6 +28,11 @@ h1 {
 .radar-container {
   max-width: 500px;
 }
+.line-container {
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
 
 /* フッター */
 ::selection {
