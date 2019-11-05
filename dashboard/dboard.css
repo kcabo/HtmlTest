@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese');
+
+
+
+#logo {
+  width: 100px;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.uk-label{
+  /* background-color: blue; */
+  font-size: .7em;
+  margin: 0 0 30px 0;
+}
+
+.uk-label.men{
+  background-color: #2980b9;
+}
+.uk-label.univ{
+  background-color: #16a085;
+}
+
+.radar-container {
+  max-width: 500px;
+}
+.line-container {
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+
+/* フッター */
+::selection {
+  background-color: salmon;
+  color: white;
+}
+
+.parallax > use {
+  animation: move-forever 12s linear infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 3s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+.editorial {
+  display: block;
+  width: 100%;
+  height: 20em;
+  max-height: 50vh;
+  margin: 20vh 0 0 0;
+}
+
+.content {
+  text-align: center;
+  background-color: #2d55aa;
+  text-align: center;
+  min-height: 10vh;
+  margin: -.1em 0 0 0;
+  padding: 1em;
+  color: #eee;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+
+
+
+
+/*prevent many large-by-comparison ripples by shrinking the height*/
+@media (max-width: 50em) {
+  .content h1 {
+    font-size: 12vmax;
+  }
+
+  .editorial {
+    height: 17vw;
+  }
+}
