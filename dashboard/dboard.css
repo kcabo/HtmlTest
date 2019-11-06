@@ -82,10 +82,12 @@ h1 {
   /* margin: 5px 0; */
   display: flex;
   justify-content: center;
+  width: 95%
+  margin: auto;
 }
 
 #radar-container {
-  width: 50vw;
+  width: 60%;
   max-width: 400px;
   padding: 10px 0;
 }
@@ -94,13 +96,13 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
-#participate .card {
+.card {
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 2px 5px #ccc;
 }
 #participate .card.mini {
-  width: 30vw;
+  width: 100%;
   max-width: 400px;
   padding: 12px;
   margin-left: 7px;
