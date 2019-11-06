@@ -34,15 +34,15 @@
 
 
   <div id="participate">
-    <div id="radar-container">
+    <div id="radar-container" class="card normal">
       <canvas id="radar" width="400" height="400"></canvas>
     </div>
     <div class="cards">
-      <div class="card">
+      <div class="card mini">
         <p class="title">出場回数</p>
         <p class="data times">32</p>
       </div>
-      <div class="card">
+      <div class="card mini">
         <p class="title">S1種目</p>
         <p class="data s1">自由形</p>
       </div>
@@ -89,21 +89,21 @@
         labels: ['Fr', 'Ba', 'Br', 'Fly', 'IM'],
         datasets: [{
           data: data,
-          label: '長水路',
+          label: '長水',
           borderColor: 'rgba(54, 162, 235, 1)',
-          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderWidth: 2,
-          pointBorderColor: "#fff",
+          borderWidth: 1,
+          pointBorderColor: 'rgba(54, 162, 235, 1)',
           pointBorderWidth: 1
         }, {
           data: [0, 1, 18, 2, 1],
-          label: '短水路',
+          label: '短水',
           borderColor: 'rgba(153, 102, 255, 1)',
-          pointBackgroundColor: 'rgba(153, 102, 255, 1)',
+          pointBackgroundColor: 'rgba(153, 102, 255, 0.2)',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
-          borderWidth: 2,
-          pointBorderColor: "#fff",
+          borderWidth: 1,
+          pointBorderColor: 'rgba(153, 102, 255, 1)',
           pointBorderWidth: 1
         }]
       },
