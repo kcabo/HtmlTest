@@ -31,33 +31,37 @@
   </div>
 
 
-
-
-  <div id="participate">
-    <div id="radar-container" class="card normal">
-      <canvas id="radar" width="400" height="400"></canvas>
-    </div>
-    <div class="cards">
-      <div class="card mini">
-        <p class="title">出場回数</p>
-        <p class="data times">32</p>
+  <div class="cards">
+    <div id="participate">
+      <div id="radar-container" class="card normal">
+        <canvas id="radar" width="400" height="400"></canvas>
       </div>
-      <div class="card mini">
-        <p class="title">S1種目</p>
-        <p class="data s1">自由形</p>
+      <div class="column">
+        <div class="card">
+          <p class="caption">出場回数</p>
+          <p class="data times">32</p>
+        </div>
+        <div class="card">
+          <p class="caption">S1種目</p>
+          <p class="data s1">IM</p>
+        </div>
+        <div class="card">
+          <p class="caption">S1偏差値</p>
+          <p class="data deviation">67</p>
+        </div>
       </div>
     </div>
+
+
+
+    <div id="condition" class="card">
+      <div id="line-container">
+        <canvas id="lineChart" width="400" height="250"></canvas>
+      </div>
+    </div>
+
+
   </div>
-
-
-
-
-  <div id="line-container">
-    <canvas id="lineChart" width="400" height="250"></canvas>
-  </div>
-
-
-
 
   <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
     <defs>
@@ -217,13 +221,13 @@
         }]
       },
       options: {
-        title: {
-          display: true,
-          text: '2019年の調子',
-          padding: 5,
-          fontSize: 16,
-          // fontStyle: null
-        },
+        // title: {
+        //   display: true,
+        //   text: '2019年の調子',
+        //   padding: 5,
+        //   fontSize: 16,
+        //   // fontStyle: null
+        // },
         tooltips: {
           // enabled: false
         },
