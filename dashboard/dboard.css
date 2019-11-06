@@ -12,7 +12,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #aad1
+  /* background-color: #aad1 */
 }
 
 #logo {
