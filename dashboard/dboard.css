@@ -2,13 +2,13 @@
 
 body {
   font-family: 'Roboto', 'Noto Sans JP' , sans-serif;
-
+  /* overflow: auto; */
 }
 
 nav {
   padding: 10px;
   border-bottom: 0.3px solid #bbb;
-  height: 50px;
+  max-height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +16,7 @@ nav {
 }
 
 #logo {
-  width: 70px;
+  width: 80px;
 }
 
 nav form {
@@ -31,6 +31,7 @@ nav form input {
   padding: 12px 0;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 #p-icon {
@@ -60,10 +61,25 @@ h1 {
   margin-right: 2px;
 }
 
+.caption-wrapper::before{
+  content:  '';           /* 空白の要素を作る */
+  background-color: #000; /* 背景色指定 */
+  display:  block;        /* ブロック要素にする */
+  width:  100%;           /* 幅指定 */
+  height:  1px;           /* 高さ指定 */
+  top: 0;                 /* 位置調整 */
+  bottom:  0;             /* 位置調整 */
+}
+
+.caption {
+  text-align: center;
+  color: #aaa;
+  display: inline-block;
+}
 
 /* 各種目の出場回数などを表示する段 */
 #participate {
-  margin: 10px 0;
+  margin: 5px 0;
   display: flex;
   justify-content: space-around;
 }
@@ -71,7 +87,7 @@ h1 {
 #radar-container {
   width: 50vw;
   max-width: 400px;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 #participate .card {
@@ -81,7 +97,7 @@ h1 {
   margin: 10px 0;
   height: 40%;
   background: #fff;
-  border-radius: 4px;
+  border-radius: 0px;
   box-shadow: 0 2px 5px #ccc;
   display: flex;
   flex-direction: column;
@@ -103,16 +119,16 @@ h1 {
   font-size: 12px;
 }
 #participate .card .s1 {
-  font-size: 20px;
+  font-size: 22px;
+}
+
+#line-container {
+  width: 90vw;
+  padding: 10px 0;
+  margin: auto;
 }
 
 
-
-
-.line-container {
-  max-width: 500px;
-  margin-bottom: 50px;
-}
 
 
 /* フッター */

@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <!-- <link rel="stylesheet" href="css/uikit.min.css"> -->
   <link rel="stylesheet" href="dboard.css">
 </head>
 
@@ -31,6 +30,9 @@
     </div>
   </div>
 
+
+
+
   <div id="participate">
     <div id="radar-container">
       <canvas id="radar" width="400" height="400"></canvas>
@@ -50,18 +52,12 @@
 
 
 
-  <div class="line-container">
+  <div id="line-container">
     <canvas id="lineChart" width="400" height="250"></canvas>
   </div>
 
-  <canvas id="myChart" width="400" height="400"></canvas>
 
 
-  <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-    <h3 class="uk-card-title">Default</h3>
-    <p>Lorem ipsr adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  </div>
-  </div>
 
   <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
     <defs>
@@ -93,6 +89,7 @@
         labels: ['Fr', 'Ba', 'Br', 'Fly', 'IM'],
         datasets: [{
           data: data,
+          label: '長水路',
           borderColor: 'rgba(54, 162, 235, 1)',
           pointBackgroundColor: 'rgba(54, 162, 235, 1)',
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -101,6 +98,7 @@
           pointBorderWidth: 1
         }, {
           data: [0, 1, 18, 2, 1],
+          label: '短水路',
           borderColor: 'rgba(153, 102, 255, 1)',
           pointBackgroundColor: 'rgba(153, 102, 255, 1)',
           backgroundColor: 'rgba(153, 102, 255, 0.2)',
@@ -119,7 +117,11 @@
           //   }
         },
         legend: {
-          display: false
+          display: true,
+          position: 'bottom',
+          labels: {
+            fontSize: 9
+          }
         },
         // title: {
         //   display: true,
