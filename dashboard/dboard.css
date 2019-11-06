@@ -3,28 +3,53 @@
 body {
   font-family: 'Roboto', 'Noto Sans JP' , sans-serif;
   /* overflow: auto; */
+  background-color: #f4f4f4ee
 }
 
 nav {
   padding: 10px;
-  border-bottom: 0.3px solid #bbb;
-  max-height: 60px;
+  /* border-bottom: 0.3px solid #bbb; */
+  background-color: #222;
+  max-height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #aad1 */
 }
 
 #logo {
   width: 80px;
 }
 
-nav form {
-
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 20%;
+  width: 60%;
+  overflow: hidden;
 }
-
-nav form input {
-  border: 0.5px solid #bbb
+.search_container input[type="text"]{
+  border: none;
+  /* height: 2.0em; */
+}
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  /* font-family: FontAwesome; */
+  /* font-size: 1.3em; */
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
 }
 
 /* 選手名 */
@@ -32,6 +57,7 @@ nav form input {
   padding: 12px 0;
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 #p-icon {
@@ -65,6 +91,7 @@ h1 {
 .cards {
   width: 90%;
   margin: auto;
+  padding-top: 20px;
 }
 .card {
   background: #fff;
@@ -122,9 +149,7 @@ h1 {
 }
 
 #line-container {
-  /* width: 100% */
   padding: 10px;
-  margin: auto;
 }
 
 
