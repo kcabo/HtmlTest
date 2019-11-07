@@ -227,18 +227,20 @@ h1 {
 #bests tbody th {
   width: 25%;
   height: 45px;
-  vertical-align: center;
+  /* vertical-align: center; */
   font-weight: normal;
 }
 #bests tbody tr:nth-child(2n+1) td {
   /* border: 0.1px #111 solid; */
-  vertical-align: bottom;
-  -webkit-vertical-align: -webkit-bottom;
-  /* padding-top: 15px; */
+  /* vertical-align: bottom;
+  -webkit-vertical-align: -webkit-bottom; */
+  height: 30px;
+  padding-top: 12px;
 }
 #bests tbody tr:nth-child(2n) td {
   font-size: 10px;
   line-height: 0.8;
+  padding-bottom: 5px;
   color: #444;
 }
 
