@@ -58,7 +58,7 @@ nav {
   top: 0;
   right: 0;
   height: 100%;
-  background-color: rgb(0, 214, 255);
+  background-color: var(--c-sky);
   color: white;
   padding: 2px 10px;
   border: .8px #555 solid;
@@ -231,12 +231,26 @@ h1 {
 #bests .header {
   width: 200px;
   height: 80px;
-  background-color: var(--c-fr);
   display: flex;
   flex-direction: column;
   color: #fff;
   font-size: 11px;
   text-align: center;
+}
+#bests .header.fr {
+  background-color: var(--c-fr);
+}
+#bests .header.ba {
+  background-color: var(--c-ba);
+}
+#bests .header.br {
+  background-color: var(--c-br);
+}
+#bests .header.fly {
+  background-color: var(--c-fly);
+}
+#bests .header.im {
+  background-color: var(--c-im);
 }
 
 #bests .header img {
@@ -281,9 +295,7 @@ h1 {
   padding-top: 8px;
   /* vertical-align: center; */
 }
-#bests tbody th span {
 
-}
 #bests tbody tr:nth-child(2n+1) td {
   /* border: 0.1px #111 solid; */
   /* vertical-align: bottom;
