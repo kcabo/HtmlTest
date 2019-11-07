@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese'); */
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap'); */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   /* overflow: auto; */
   background-color: #f4f4f4ee
 }
