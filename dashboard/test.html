@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="test.css" />
+</head>
+
+<body>
+
+
+  <div class="search">
+    <input type="search" class="search-box" />
+    <span class="search-button">
+      <span class="search-icon"></span>
+    </span>
+  </div>
+
+  <script>
+    // document.getElementsByClassName(".search-box").onclick = function() {
+    //     // document.getElementsByClassName(".search-box").classList.add("open");
+    //     console.log("Hello world!");
+    // };
+    var button = document.getElementsByClassName(".search-button");
+
+   var myfunc = function(){
+     console.log("onclickプロパティを使用しました");
+   }
+
+   button.onclick = myfunc;
+  </script>
+</body>
+
+</html>

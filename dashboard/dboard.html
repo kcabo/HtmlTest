@@ -13,10 +13,13 @@
 <body>
   <nav>
     <a href="/"><img src="wlogo.svg" alt="Zero" id="logo"></a>
-    <form method="get" action="#" class="search_container">
-      <input type="text" size="25" placeholder="選手を検索">
-      <input type="submit" value="送信">
-    </form>
+    <!-- <form id="search" action="/">
+      <input name="name" type="text" placeholder="選手を検索" />
+      <input type="submit" value="検索">
+    </form> -->
+    <div id="search-container">
+      <input name="name" type="text" placeholder="選手を検索">
+    </div>
   </nav>
 
   <div id="swimmer-info">
@@ -47,7 +50,11 @@
           <p class="data s1">IM</p>
         </div>
         <div class="card">
-          <p class="caption">S1偏差値</p>
+          <p class="caption">S1偏差値(長)</p>
+          <p class="data deviation">67</p>
+        </div>
+        <div class="card">
+          <p class="caption">S1偏差値(短)</p>
           <p class="data deviation">67</p>
         </div>
       </div>

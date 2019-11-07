@@ -20,37 +20,65 @@ nav {
   width: 80px;
 }
 
-.search_container{
-  box-sizing: border-box;
-  position: relative;
-  border: 1px solid #999;
-  padding: 3px 10px;
-  border-radius: 20px;
-  height: 20%;
-  width: 60%;
-  overflow: hidden;
+
+
+
+/* 検索ボックス */
+#search-container {
+
+
 }
-.search_container input[type="text"]{
-  border: none;
-  /* height: 2.0em; */
+#search-container input:first-child {
+  border: 0.5px #aaa solid;
+  border-radius: 8px;
+  height: 50%;
+  width: 100%;
+  max-width: 400px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  background-color: #3337;
+  outline: none;
 }
-.search_container input[type="text"]:focus {
-  outline: 0;
+#search-container input:first-child:focus {
+  background-color: #eee;
+  color: #eee;
 }
-.search_container input[type="submit"]{
-  cursor: pointer;
-  /* font-family: FontAwesome; */
-  /* font-size: 1.3em; */
-  border: none;
-  background: none;
-  color: #3879D9;
-  position: absolute;
-  width: 2.5em;
-  height: 2.5em;
-  right: 0;
-  top: -10px;
-  outline : none;
+
+
+
+
+#search {
+  width: 50%;
+  max-width: 200px;
+  display: flex;
+  margin-right: 10px;
+  font-size: 12px;
 }
+#search input:first-child {
+  border-bottom: 0.5px #aaa solid;
+  outline: 0;/*クリック時の青い枠線消す*/
+  background-color: none;
+  height: 50%;
+}
+/*検索ボタン*/
+#sbtn{
+width:70px;/*検索ボタンの横幅*/
+height:50px;/*検索ボタンの縦幅*/
+/* top:0; */
+border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/
+background:#7fbfff;/*検索ボタンの背景カラー*/
+border:none;/*検索ボタンの枠線を消す*/
+color:#fff;/*検索ボタンのテキストカラー*/
+font-weight:bold;/*検索ボタンのテキスト太字*/
+font-size:16px;/*検索ボタンのフォントサイズ*/
+}
+/*検索ボタンマウスオーバー時*/
+#sbtn:hover{
+color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
+}
+
+
 
 /* 選手名 */
 #swimmer-info {
@@ -92,6 +120,7 @@ h1 {
   width: 90%;
   margin: auto;
   padding-top: 20px;
+  max-width: 700px;
 }
 .card {
   background: #fff;
@@ -117,9 +146,9 @@ h1 {
 }
 #participate .column .card {
   width: 100%;
-  max-width: 400px;
-  padding: 12px;
-  height: 31%;
+  /* max-width: 400px; */
+  padding: 6px 12px;
+  height: 23%;
   display: flex;
   flex-direction: column;
   justify-content: center;
