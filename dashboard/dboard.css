@@ -181,7 +181,6 @@ h1 {
 #bests {
   white-space: nowrap;
   overflow-x: auto;
-  margin: 20px 0;
 }
 #bests::-webkit-scrollbar {
   width: 0px;
@@ -192,7 +191,7 @@ h1 {
   overflow: hidden;
   margin: 20px 3px;
 }
-#bests .header.fr {
+#bests .header {
   width: 220px;
   height: 80px;
   background-color: rgb(0, 188, 212);
@@ -203,9 +202,12 @@ h1 {
   text-align: center;
 }
 
-#bests .header.fr img {
-  width: 50px;
-  margin: 20px auto 3px auto;
+#bests .header img {
+  width: 60px;
+  margin: 0 auto;
+}
+#bests .header p {
+  margin-top: -8px;
 }
 #bests .wrap {
   width: 220px;
