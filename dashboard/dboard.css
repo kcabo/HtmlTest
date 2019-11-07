@@ -233,6 +233,7 @@ h1 {
 #bests tbody tr:nth-child(2n+1) td {
   /* border: 0.1px #111 solid; */
   vertical-align: bottom;
+  -webkit-vertical-align: bottom;
 }
 #bests tbody tr:nth-child(2n) td {
   font-size: 10px;
