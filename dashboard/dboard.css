@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese');
-
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese'); */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap');
 body {
   font-family: 'Roboto', 'Noto Sans JP' , sans-serif;
   /* overflow: auto; */
@@ -34,7 +34,7 @@ nav {
   border: .8px #555 solid;
   border-radius: 5px;
   width: 100%;
-  max-width: 400px;
+  /* max-width: 400px; */
   padding: 5px 10px;
   font-size: 14px;
   color: #aaa;
