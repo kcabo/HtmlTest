@@ -6,19 +6,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="dboard.css">
 </head>
 
 <body>
   <nav>
     <a href="/"><img src="wlogo.svg" alt="Zero" id="logo"></a>
-    <!-- <form id="search" action="/">
-      <input name="name" type="text" placeholder="選手を検索" />
-      <input type="submit" value="検索">
-    </form> -->
     <div id="search-container">
       <input name="name" type="text" placeholder="選手を検索">
+      <input type="submit" value="GO">
     </div>
   </nav>
 
@@ -51,16 +48,18 @@
         </div>
         <div class="card">
           <p class="caption">S1偏差値(長)</p>
-          <p class="data deviation">67</p>
+          <p class="data deviation">61.7</p>
         </div>
         <div class="card">
           <p class="caption">S1偏差値(短)</p>
-          <p class="data deviation">67</p>
+          <p class="data deviation">59.0</p>
         </div>
       </div>
     </div>
 
     <div id="condition" class="card">
+      <h2>2019年のIMの調子</h2>
+      <p>○…長水路 △…短水路</p>
       <div id="line-container">
         <canvas id="lineChart" width="400" height="250"></canvas>
       </div>

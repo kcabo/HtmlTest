@@ -25,57 +25,38 @@ nav {
 
 /* 検索ボックス */
 #search-container {
-
-
+  height: 50%;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
 }
 #search-container input:first-child {
-  border: 0.5px #aaa solid;
-  border-radius: 8px;
-  height: 50%;
+  border: .8px #555 solid;
+  border-radius: 5px;
   width: 100%;
   max-width: 400px;
   padding: 5px 10px;
-  margin-right: 10px;
   font-size: 14px;
+  color: #aaa;
   background-color: #3337;
   outline: none;
 }
 #search-container input:first-child:focus {
   background-color: #eee;
-  color: #eee;
+  color: #111;
 }
-
-
-
-
-#search {
-  width: 50%;
-  max-width: 200px;
-  display: flex;
-  margin-right: 10px;
+#search-container input:nth-child(2) {
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: rgb(0, 214, 255);
+  color: white;
+  padding: 2px 10px;
+  border: .8px #555 solid;
+  border-radius: 0 5px 5px 0;
   font-size: 12px;
-}
-#search input:first-child {
-  border-bottom: 0.5px #aaa solid;
-  outline: 0;/*クリック時の青い枠線消す*/
-  background-color: none;
-  height: 50%;
-}
-/*検索ボタン*/
-#sbtn{
-width:70px;/*検索ボタンの横幅*/
-height:50px;/*検索ボタンの縦幅*/
-/* top:0; */
-border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/
-background:#7fbfff;/*検索ボタンの背景カラー*/
-border:none;/*検索ボタンの枠線を消す*/
-color:#fff;/*検索ボタンのテキストカラー*/
-font-weight:bold;/*検索ボタンのテキスト太字*/
-font-size:16px;/*検索ボタンのフォントサイズ*/
-}
-/*検索ボタンマウスオーバー時*/
-#sbtn:hover{
-color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
 }
 
 
@@ -172,9 +153,20 @@ h1 {
   font-size: 25px;
 }
 
+/* 調子の段 */
 #condition {
   width: 100%;
   margin-top: 10px;
+  text-align: center;
+}
+#condition h2 {
+  font-size: 14px;
+  color: #555;
+  padding-top: 5px;
+}
+#condition p {
+  font-size: 10px;
+  color: #aaa;
 }
 
 #line-container {
@@ -185,11 +177,6 @@ h1 {
 
 
 /* フッター */
-::selection {
-  background-color: salmon;
-  color: white;
-}
-
 .parallax > use {
   animation: move-forever 12s linear infinite;
 }
@@ -216,7 +203,7 @@ h1 {
 .editorial {
   display: block;
   width: 100%;
-  height: 20em;
+  height: 100px;
   max-height: 50vh;
   margin: 20vh 0 0 0;
 }
@@ -225,12 +212,11 @@ h1 {
   text-align: center;
   background-color: #2d55aa;
   text-align: center;
-  min-height: 10vh;
   margin: -.1em 0 0 0;
-  padding: 1em;
+  padding: 40px 10px;
   color: #eee;
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 
