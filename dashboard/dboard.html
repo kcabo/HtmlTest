@@ -493,8 +493,7 @@
         }
       }
     });
-  </script>
-  <script>
+
     var ctx = document.getElementById("lineChart").getContext('2d');
     var e1 = [{
       x: 1,
@@ -542,7 +541,7 @@
       type: 'scatter',
       data: {
         datasets: [{
-          label: '100m',
+          label: '短 100m',
           data: e1,
           backgroundColor: 'rgba(255, 99, 132, 0.15)',
           borderColor: 'rgba(255,99,132,1)',
@@ -550,7 +549,40 @@
           borderWidth: 1,
           pointStyle: 'triangle',
         }, {
-          label: '200m',
+          label: '長 100m',
+          data: [{
+            x: 218,
+            y: 37
+          }, {
+            x: 288,
+            y: 12
+          }, {
+            x: 318,
+            y: 100
+          }],
+          backgroundColor: 'rgba(255, 99, 132, 0.15)',
+          borderColor: 'rgba(255,99,132,1)',
+          showLine: true,
+          borderWidth: 1,
+          pointStyle: 'triangle',
+        }, {
+          label: '短 200m',
+          data: [{
+            x: 218,
+            y: 21
+          }, {
+            x: 288,
+            y: 32
+          }, {
+            x: 318,
+            y: 98
+          }],
+          backgroundColor: 'rgba(153, 102, 255, 0.15)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          showLine: true,
+          borderWidth: 1,
+        },{
+          label: '長 200m',
           data: e2,
           backgroundColor: 'rgba(153, 102, 255, 0.15)',
           borderColor: 'rgba(153, 102, 255, 1)',
