@@ -417,86 +417,82 @@
     </g>
   </svg>
   <div class="content">
-    <p contenteditable="true" class="blue">Created by Reo Kanzaki</p>
+    <p>Created by Reo Kanzaki</p>
   </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
-    var red
-    var ctx = document.getElementById("radar").getContext('2d');
-    var data = [10, 10, 4, 2, 13]
-    var radar = new Chart(ctx, {
+    var colorLong = '#1B98E0';
+    var colorShort = '#06A77D';
+    var tDegree = '29'
+    var gray = '#555';
+    var lineWidth = 0.7;
+
+    var ctxRadar = document.getElementById("radar").getContext('2d');
+    var dataLong = [10, 10, 4, 2, 13];
+    var dataShort = [2, 10, 6, 4, 7];
+    var radarConfig = {
       type: 'radar',
       data: {
         labels: ['Fr', 'Ba', 'Br', 'Fly', 'IM'],
         datasets: [{
-          data: data,
+          data: dataLong,
           label: '長水',
-          borderColor: '#FFB300',
-          pointBackgroundColor: '#FFB30022',
-          backgroundColor: '#FFB30022',
-          borderWidth: 1,
-          pointBorderColor: '#FFB300',
-          pointBorderWidth: 1
+          borderColor: colorLong,
+          pointBorderColor: colorLong,
+          backgroundColor: colorLong + tDegree,
+          pointBackgroundColor: colorLong + tDegree,
+          borderWidth: lineWidth,
+          pointBorderWidth: lineWidth
         }, {
-          data: [0, 1, 18, 2, 1],
+          data: dataShort,
           label: '短水',
-          borderColor: 'rgba(153, 102, 255, 1)',
-          pointBackgroundColor: 'rgba(153, 102, 255, 0.2)',
-          backgroundColor: 'rgba(153, 102, 255, 0.2)',
-          borderWidth: 1,
-          pointBorderColor: 'rgba(153, 102, 255, 1)',
-          pointBorderWidth: 1
+          borderColor: colorShort,
+          pointBorderColor: colorShort,
+          backgroundColor: colorShort + tDegree,
+          pointBackgroundColor: colorShort + tDegree,
+          borderWidth: lineWidth,
+          pointBorderWidth: lineWidth
         }]
       },
       options: {
-        layout: {
-          // padding: {
-          //       left: 10,
-          //       right: 10,
-          //       top: 0,
-          //       bottom: 0
-          //   }
-        },
         legend: {
           display: true,
           position: 'bottom',
           labels: {
-            fontSize: 9
+            fontSize: 10
           }
         },
-        // title: {
-        //   display: true,
-        //   text: '各種目の出場数',
-        //   padding: 3,
-        //   fontSize: 16
-        // },
         scale: {
           pointLabels: {
             fontSize: 10,
-            fontColor: "#555"
+            fontColor: gray,
           },
           ticks: {
-            fontColor: "#999",
+            fontColor: gray,
             suggestedMin: 0,
             max: 15,
             stepSize: 5,
           },
           gridLines: {
-            color: "#666",
+            color: gray,
             lineWidth: 0.5
           },
           angleLines: {
-            color: "#666",
+            color: gray,
             lineWidth: 0.5
           }
         }
       }
-    });
+    };
+    var radar = new Chart(ctxRadar, radarConfig);
 
-    var ctx = document.getElementById("lineChart").getContext('2d');
-    var e1 = [{
+    var jMonths = ['4', '5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4'];
+    var colorE1 = '#CD6CFF';
+    var colorE2 = '#F4376E';
+    var ctxLine = document.getElementById("lineChart").getContext('2d');
+    var e1Long = [{
       x: 1,
       y: 64
     }, {
@@ -518,7 +514,17 @@
       x: 208,
       y: 60.15
     }];
-    var e2 = [{
+    var e1Short = [{
+      x: 218,
+      y: 37
+    }, {
+      x: 288,
+      y: 12
+    }, {
+      x: 318,
+      y: 100
+    }];
+    var e2Long = [{
       x: 1,
       y: 93.7
     }, {
@@ -536,72 +542,64 @@
     }, {
       x: 166,
       y: 100
-    }]
-    var jMonths = ['4', '5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4'];
-    var myChart = new Chart(ctx, {
+    }];
+    var e2Short = [{
+      x: 218,
+      y: 21
+    }, {
+      x: 288,
+      y: 32
+    }, {
+      x: 318,
+      y: 98
+    }];
+    var datasets = [{
+        label: '長 100IM',
+        data: e1Long,
+        pointStyle: 'circle',
+        borderColor: colorE1,
+        backgroundColor: colorE1 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '短 100IM',
+        data: e1Short,
+        pointStyle: 'triangle',
+        borderColor: colorE1,
+        backgroundColor: colorE1 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '長 200IM',
+        data: e2Long,
+        pointStyle: 'circle',
+        borderColor: colorE2,
+        backgroundColor: colorE2 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '短 200IM',
+        data: e2Short,
+        pointStyle: 'triangle',
+        borderColor: colorE2,
+        backgroundColor: colorE2 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      }
+    ];
+
+    var lineConfig = {
       type: 'scatter',
       data: {
-        datasets: [{
-          label: '短 100IM',
-          data: e1,
-          backgroundColor: 'rgba(255, 99, 132, 0.15)',
-          borderColor: 'rgba(255,99,132,1)',
-          showLine: true,
-          borderWidth: 1,
-          pointStyle: 'triangle',
-        }, {
-          label: '長 100IM',
-          data: [{
-            x: 218,
-            y: 37
-          }, {
-            x: 288,
-            y: 12
-          }, {
-            x: 318,
-            y: 100
-          }],
-          backgroundColor: 'rgba(255, 99, 132, 0.15)',
-          borderColor: 'rgba(255,99,132,1)',
-          showLine: true,
-          borderWidth: 1,
-          pointStyle: 'triangle',
-        }, {
-          label: '短 200IM',
-          data: [{
-            x: 218,
-            y: 21
-          }, {
-            x: 288,
-            y: 32
-          }, {
-            x: 318,
-            y: 98
-          }],
-          backgroundColor: 'rgba(153, 102, 255, 0.15)',
-          borderColor: 'rgba(153, 102, 255, 1)',
-          showLine: true,
-          borderWidth: 1,
-        },{
-          label: '長 200IM',
-          data: e2,
-          backgroundColor: 'rgba(153, 102, 255, 0.15)',
-          borderColor: 'rgba(153, 102, 255, 1)',
-          showLine: true,
-          borderWidth: 1,
-        }]
+        datasets: datasets
       },
       options: {
-        // title: {
-        //   display: true,
-        //   text: '2019年の調子',
-        //   padding: 5,
-        //   fontSize: 16,
-        //   // fontStyle: null
+        // tooltips: {
+        //   enabled: false
         // },
-        tooltips: {
-          // enabled: false
-        },
         elements: {
           line: {
             tension: 0
@@ -609,7 +607,6 @@
         },
         legend: {
           position: 'bottom',
-
         },
         scales: {
           xAxes: [{
@@ -618,7 +615,6 @@
               suggestedMax: 365,
               stepSize: 1,
               autoSkip: false,
-              // labelOffset: 15,
               maxRotation: 0,
               callback: function(value, index, values) {
                 // 4月1日からの経過日数リスト。これらは各月の一日目。個人的に最高にイカしてる実装方法
@@ -633,7 +629,7 @@
             gridLines: {
               borderDash: [3],
               zeroLineBorderDash: [3],
-              tickMarkLength: 5,
+              tickMarkLength: 8,
               color: '#aaa',
               zeroLineColor: '#aaa',
               lineWidth: 0.5,
@@ -650,7 +646,8 @@
           }]
         }
       }
-    });
+    };
+    var myChart = new Chart(ctxLine, lineConfig);
   </script>
 </body>
 
