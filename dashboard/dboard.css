@@ -172,6 +172,7 @@ h1 {
 #participate .card .data span {
   font-size: 12px;
   padding-left: 5px;
+  letter-spacing: -0.4px;
 
 }
 
@@ -360,10 +361,24 @@ h1 {
 #records tr td:nth-child(1) span {
   display: inline-block;
   width: 50px;
-  background-color: var(--c-fr);
   color: white;
   border-radius: 10px;
   line-height: 1.7;
+}
+#records tr td:nth-child(1) span.fr {
+  background-color: var(--c-fr);
+}
+#records tr td:nth-child(1) span.ba {
+  background-color: var(--c-ba);
+}
+#records tr td:nth-child(1) span.br {
+  background-color: var(--c-br);
+}
+#records tr td:nth-child(1) span.fly {
+  background-color: var(--c-fly);
+}
+#records tr td:nth-child(1) span.im {
+  background-color: var(--c-im);
 }
 #records tr td:nth-child(2) {
   font-size: 16px;
