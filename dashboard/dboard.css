@@ -427,17 +427,11 @@ h1 {
   font-size: 20px;
   font-weight: 600;
 }
-
-
-
-
-
 /*prevent many large-by-comparison ripples by shrinking the height*/
 @media (max-width: 50em) {
   .content h1 {
     font-size: 12vmax;
   }
-
   .editorial {
     height: 17vw;
   }
