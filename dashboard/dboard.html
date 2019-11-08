@@ -423,6 +423,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
+    var red
     var ctx = document.getElementById("radar").getContext('2d');
     var data = [10, 10, 4, 2, 13]
     var radar = new Chart(ctx, {
@@ -432,11 +433,11 @@
         datasets: [{
           data: data,
           label: '長水',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: '#FFB300',
+          pointBackgroundColor: '#FFB30022',
+          backgroundColor: '#FFB30022',
           borderWidth: 1,
-          pointBorderColor: 'rgba(54, 162, 235, 1)',
+          pointBorderColor: '#FFB300',
           pointBorderWidth: 1
         }, {
           data: [0, 1, 18, 2, 1],
