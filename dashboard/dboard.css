@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap&subset=japanese'); */
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto:400,700,900&display=swap&subset=japanese');
 :root {
   --c-yellow: #FFB300;
   --c-blue: #1E88E5;
@@ -59,13 +58,9 @@ nav {
   right: 0;
   height: 100%;
   background-color: var(--c-water);
-  color: #fff;
   padding: 2px 16px;
   border: .8px #555 solid;
   border-radius: 0 5px 5px 0;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 2px;
 }
 #search-container span {
   position: absolute;
