@@ -128,7 +128,7 @@ nav {
   text-align: center;
   border-radius: 5px;
   color: white;
-  padding: 6px 15px;
+  padding: 6px 15px 6px 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,7 +143,7 @@ nav {
   width: 35%;
 }
 #style-buttons a {
-  font-weight: bold;
+  font-weight: 550;
   display: inline-block;
   background-color: #fefefe44;
   /* border: 0.5px #eee solid; */
@@ -151,6 +151,12 @@ nav {
   padding: 8px 0;
   letter-spacing: 1px;
   box-shadow: 2px 2px #6664;
+  text-decoration: none;
+  color: white;
+}
+#style-buttons a:hover {
+  background-color: transparent;
+  border: 1px #eee solid;
 }
 #style-buttons #fr a {
   margin: 3px 0;
