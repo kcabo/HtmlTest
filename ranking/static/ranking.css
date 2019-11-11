@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto:100,400&display=swap&subset=japanese');
+:root {
+  --c-yellow: #FFB300;
+  --c-blue: #1E88E5;
+  --c-sky: #14FFF7;
+  --c-water: #3dd8ff;
+  --c-fr: #03A9F4;
+  --c-ba: #54b14f;
+  --c-br: #3f51b5;
+  --c-fly: #ff5722;
+  --c-im: #eb1e61;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  background-color: #f4f4f4;
+  /* background-color: #EDF3F3;  */
+}
+
+nav {
+  padding: 10px;
+  /* border-bottom: 0.3px solid #bbb; */
+  background-color: #222;
+  max-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  width: 80px;
+}
+
+/* 検索ボックス */
+#search-container {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+#search-container input:first-child {
+  border: .8px #555 solid;
+  border-radius: 5px;
+  width: 100%;
+  /* max-width: 400px; */
+  padding: 3px 10px;
+  line-height: 1.8;
+  font-size: 1.4rem;
+  color: #aaa;
+  background-color: #3337;
+  outline: none;
+}
+#search-container input:first-child:focus {
+  background-color: #eee;
+  color: #111;
+}
+#search-container input:nth-child(2) {
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--c-water);
+  padding: 2px 16px;
+  border: .8px #555 solid;
+  border-radius: 0 5px 5px 0;
+}
+#search-container span {
+  position: absolute;
+  top: 8px;
+  right: 13px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px white solid;
+}
+#search-container span::after {
+  content: '';
+  position: absolute;
+  top: 11px;
+  right: -7px;
+  width: 6px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+
+#header {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px #ccc;
+  padding-bottom: 20px;
+}
+#header h1 {
+  text-align: center;
+  font-weight: 100;
+  padding: 20px 0;
+  font-size: 3.4rem;
+}
+#header #caption {
+  padding-left: 30px;
+  position: relative;
+}
+#header #caption {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #222;
+  letter-spacing: 1px;
+}
+#header #caption p:first-child::before {
+  content: "";
+  background-color: var(--c-water);
+  height: 100%;
+  width: 10px;
+  position: absolute;
+  left: 10px;
+}
+
+
+/* セレクト */
+#style-buttons .row {
+  margin: 3px 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  padding: 6px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#style-buttons #fr .column {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+#style-buttons span {
+  display: inline-block;
+  width: 35%;
+}
+#style-buttons a {
+  font-weight: bold;
+  display: inline-block;
+  background-color: #fefefe44;
+  border: 0.5px #eee solid;
+  border-radius: 5px;
+  padding: 8px 0;
+  letter-spacing: 1px;
+}
+#style-buttons #fr a {
+  margin: 3px 0;
+  width: 100%;
+}
+#style-buttons .row:not(:first-child) a {
+  width: 20%;
+}
+#style-buttons #fr {
+  background-color: var(--c-fr);
+}
+#style-buttons #ba {
+  background-color: var(--c-ba);
+}
+#style-buttons #br {
+  background-color: var(--c-br);
+}
+#style-buttons #fly {
+  background-color: var(--c-fly);
+}
+#style-buttons #im {
+  background-color: var(--c-im);
+}
+
+/* フッター */
+.parallax > use {
+  animation: move-forever 12s linear infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 3s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+.editorial {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-top: 70px;
+}
+
+#footer {
+  text-align: center;
+  background-color: #2d55aa;
+  text-align: center;
+  margin: -.1em 0 0 0;
+  padding: 40px 10px;
+  color: #eee;
+  font-size: 20px;
+  font-weight: 600;
+}
+/*prevent many large-by-comparison ripples by shrinking the height*/
+@media (max-width: 50em) {
+  .content h1 {
+    font-size: 12vmax;
+  }
+  .editorial {
+    height: 17vw;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>SwimmersZero|Ranking</title>
+  <meta charset="utf-8">
+  <meta name="description" content="水泳選手の記録の分析を数百万の大会結果から出力します。">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="static/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" href="static/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="static/ranking.css">
+</head>
+
+<body>
+  <nav>
+    <a href="/"><img src="static/wlogo.svg" alt="Zero" id="logo"></a>
+    <form id="search-container" method="post" action="/dashboard">
+      <!-- とりあえず今はidでのみ検索できるように -->
+      <input name="id" type="text" placeholder="選手を検索">
+      <input type="submit" value=""><span></span>
+    </form>
+  </nav>
+
+  <div id="header">
+    <h1>Ranking</h1>
+    <div id="caption"><p>2019年4月~</p><p>男子 長水路</p><h2>50m 自由形</h2></div>
+    <div id="style-buttons">
+      <div id="fr" class="row">
+        <span>自由形</span>
+        <div class="column">
+          <a>50</a>
+          <a>400</a>
+        </div>
+        <div class="column">
+          <a>100</a>
+          <a>800</a>
+        </div>
+        <div class="column">
+          <a>200</a>
+          <a>1500</a>
+        </div>
+      </div>
+      <div id="ba" class="row">
+        <span>背泳ぎ</span>
+        <a>50</a>
+        <a>100</a>
+        <a>200</a>
+      </div>
+      <div id="br" class="row">
+        <span>平泳ぎ</span>
+        <a>50</a>
+        <a>100</a>
+        <a>200</a>
+      </div>
+      <div id="fly" class="row">
+        <span>バタフライ</span>
+        <a>50</a>
+        <a>100</a>
+        <a>200</a>
+      </div>
+      <div id="im" class="row">
+        <span>個人メドレー</span>
+        <a>50</a>
+        <a>100</a>
+        <a>200</a>
+      </div>
+    </div>
+
+    <div id="filter">
+
+    </div>
+
+  </div>
+
+
+
+
+  <svg class="editorial" viewBox="0 24 150 28" preserveAspectRatio="none">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0
+      58-18 88-18s
+      58 18 88 18
+      58-18 88-18
+      58 18 88 18
+      v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+      <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+      <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+    </g>
+  </svg>
+  <div id="footer">
+    <p>Created by Reo Kanzaki</p>
+  </div>
+
+</body>
+
+</html>
