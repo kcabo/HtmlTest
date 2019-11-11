@@ -146,10 +146,11 @@ nav {
   font-weight: bold;
   display: inline-block;
   background-color: #fefefe44;
-  border: 0.5px #eee solid;
+  /* border: 0.5px #eee solid; */
   border-radius: 5px;
   padding: 8px 0;
   letter-spacing: 1px;
+  box-shadow: 2px 2px #6664;
 }
 #style-buttons #fr a {
   margin: 3px 0;
