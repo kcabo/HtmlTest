@@ -114,8 +114,11 @@ body {
   /* padding-bottom: 5px; */
   /* box-sizing: border-box; */
 }
-#tab div .selected.men{
+#tab div.selected .men{
   border-bottom: 4px var(--c-men) solid;
+}
+#tab div.selected .women{
+  border-bottom: 4px var(--c-women) solid;
 }
 #tab div a {
   text-decoration: none;
