@@ -4,19 +4,24 @@
   --c-blue: #1E88E5;
   --c-sky: #14FFF7;
   --c-water: #3dd8ff;
-  --c-fr: #03A9F4;
+  /* --c-fr: #03A9F4;
   --c-ba: #54b14f;
   --c-br: #3f51b5;
   --c-fly: #ff5722;
-  --c-im: #eb1e61;
+  --c-im: #eb1e61; */
+  --c-fr: #03A9F4;
+  --c-ba: #20bf6b;
+  --c-br: #3867d6;
+  --c-fly: #fa8231;
+  --c-im: #8b54d0;
+  --c-men: rgb(93, 156, 236);
+  --c-women: rgb(235, 83, 103)
 }
 html {
   font-size: 62.5%;
 }
 body {
   font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-  background-color: #f4f4f4;
-  /* background-color: #EDF3F3;  */
 }
 
 nav {

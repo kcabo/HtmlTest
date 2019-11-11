@@ -1,29 +1,33 @@
-
-
+body {
+  /* background-color: #f4f4f4; */
+  /* background-color: #EDF3F3;  */
+}
 #header {
   width: 100%;
   background-color: white;
-  box-shadow: 0 2px 5px #ccc;
-  padding-bottom: 20px;
+  /* box-shadow: 0 2px 5px #ccc; */
+  /* padding-bottom: 20px; */
 }
 #header h1 {
   text-align: center;
   font-weight: 100;
   padding: 20px 0;
-  font-size: 3.4rem;
+  font-size: 3rem;
 }
-#header #caption {
+#caption {
+  margin-top: 20px;
   padding-left: 30px;
   position: relative;
 }
-#header #caption {
+#caption {
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.5;
   color: #222;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
-#header #caption p:first-child::before {
+#caption p:first-child::before {
   content: "";
   background-color: var(--c-water);
   height: 100%;
@@ -91,4 +95,33 @@
 }
 #style-buttons #im {
   background-color: var(--c-im);
+}
+
+
+/* カテゴリ選ぶタブみたいなやつ */
+#tab {
+  margin-top: 20px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: .5px #ddd solid;
+}
+#tab div {
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+  /* height: 50px; */
+  /* padding-bottom: 5px; */
+  /* box-sizing: border-box; */
+}
+#tab div .selected.men{
+  border-bottom: 4px var(--c-men) solid;
+}
+#tab div a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: black;
 }
