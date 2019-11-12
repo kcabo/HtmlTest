@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>SwimmersZero|Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="description" content="水泳選手の記録の分析を数百万の大会結果から出力します。">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="static/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" href="static/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="static/dashboard.css">
+</head>
+
+<body>
+  <nav>
+    <a href="/"><img src="static/wlogo.svg" alt="Zero" id="logo"></a>
+    <form id="search-container" method="post" action="/dashboard">
+      <!-- とりあえず今はidでのみ検索できるように -->
+      <input name="id" type="text" placeholder="選手を検索">
+      <input type="submit" value=""><span></span>
+    </form>
+  </nav>
+
+  <div id="swimmer-info">
+    <img src="static/men.svg" alt="men" id="p-icon">
+    <div class="column">
+      <h1>野﨑充</h1>
+      <div id="tips">
+        <span class="univ">大学4</span>
+
+        <span>鹿屋体育大</span>
+
+        <span>鹿屋体育大学</span>
+
+        <span>佐賀</span>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cards">
+    <div id="participate">
+      <div id="radar-container" class="card">
+        <canvas id="radar" width="400" height="400"></canvas>
+      </div>
+      <div class="column">
+        <div class="card">
+          <p class="caption">出場回数</p>
+          <p class="data">40<span>回</span></p>
+        </div>
+        <div class="card">
+          <p class="caption">S1種目</p>
+          <p class="data">200Fly</p>
+        </div>
+        <div class="card">
+          <p class="caption">S1偏差値(長)</p>
+          <p class="data">61.7</p>
+        </div>
+        <div class="card">
+          <p class="caption">S1偏差値(短)</p>
+          <p class="data">59.0</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="condition" class="card">
+      <h2>2019年の調子</h2>
+      <p>○…長水路 △…短水路</p>
+      <div id="line-container">
+        <canvas id="lineChart" width="400" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption-container">
+    <div class="circle"></div>
+    <h3>Bests</h3>
+  </div>
+  <div id="bests">
+    <div class="card">
+      <div class="header fr">
+        <img src="static/fr.svg" alt="自由形">
+        <p>自由形</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>50m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>100m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>200m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header fr">
+        <img src="static/fr.svg" alt="自由形">
+        <p>自由形</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>400m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>800m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>1500m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header ba">
+        <img src="static/ba.svg" alt="背泳ぎ">
+        <p>背泳ぎ</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>50m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>100m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>200m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header br">
+        <img src="static/br.svg" alt="平泳ぎ">
+        <p>平泳ぎ</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>50m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>100m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>200m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header fly">
+        <img src="static/fly.svg" alt="バタフライ">
+        <p>バタフライ</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>50m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>100m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>200m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header im">
+        <img src="static/im.svg" alt="個人メドレー">
+        <p>個人メドレー</p>
+      </div>
+      <div class="wrap">
+        <table>
+          <thead>
+            <tr>
+              <td><span>短</span></td>
+              <td></td>
+              <td><span>長</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>50m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>100m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+            <tr>
+              <td>0:28.12</td>
+              <th rowspan="2"><span>200m</span></th>
+              <td>0:29.12</td>
+            </tr>
+            <tr>
+              <td>2019/03/17</td>
+              <td>2019/03/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="caption-container">
+    <div class="circle"></div>
+    <h3>Records</h3>
+  </div>
+
+  <div id="records" class="card">
+    <table>
+      <tbody>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:04.29</td>
+          <td><span class="l">長</span></td>
+          <td>2019/09/14<br>第74回国民体育大会</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:59.27</td>
+          <td><span class="l">長</span></td>
+          <td>2019/09/06<br>第95回日本学生選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:01.79</td>
+          <td><span class="l">長</span></td>
+          <td>2019/09/06<br>第95回日本学生選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:22.28</td>
+          <td><span class="l">長</span></td>
+          <td>2019/09/06<br>第95回日本学生選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:26.46</td>
+          <td><span class="l">長</span></td>
+          <td>2019/09/06<br>第95回日本学生選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:58.76</td>
+          <td><span class="l">長</span></td>
+          <td>2019/08/10<br>第66回全国国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:00.35</td>
+          <td><span class="l">長</span></td>
+          <td>2019/08/10<br>第66回全国国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:28.11</td>
+          <td><span class="l">長</span></td>
+          <td>2019/08/10<br>第66回全国国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:59.49</td>
+          <td><span class="l">長</span></td>
+          <td>2019/08/02<br>FINAW杯2019東京大会</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:26.96</td>
+          <td><span class="l">長</span></td>
+          <td>2019/08/02<br>FINAW杯2019東京大会</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:55.33</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:56.16</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:59.96</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:02.27</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:07.12</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:09.33</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/20<br>鹿児島:県選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:01.03</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/06<br>学九州:第79回九州学生選手権兼第66回九州地区国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:02.04</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/06<br>学九州:第79回九州学生選手権兼第66回九州地区国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:23.67</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/06<br>学九州:第79回九州学生選手権兼第66回九州地区国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:25.11</td>
+          <td><span class="l">長</span></td>
+          <td>2019/07/06<br>学九州:第79回九州学生選手権兼第66回九州地区国公立大学選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:52.59</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:54.32</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:59.03</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>2:03.32</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fr">50Fr</span></td>
+          <td>0:23.43</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fr">50Fr</span></td>
+          <td>0:24.40</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:01.07</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:05.06</td>
+          <td><span class="s">短</span></td>
+          <td>2019/06/29<br>佐賀:第70回県選手権兼国体予選</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:54.43</td>
+          <td><span class="l">長</span></td>
+          <td>2019/06/16<br>鹿児島:第221回県SC(AB級)</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:06.10</td>
+          <td><span class="l">長</span></td>
+          <td>2019/06/16<br>鹿児島:第221回県SC(AB級)</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:53.88</td>
+          <td><span class="l">長</span></td>
+          <td>2019/05/30<br>ｼﾞｬﾊﾟﾝｵｰﾌﾟﾝ2019(50m)</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:58.45</td>
+          <td><span class="l">長</span></td>
+          <td>2019/05/30<br>ｼﾞｬﾊﾟﾝｵｰﾌﾟﾝ2019(50m)</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:59.70</td>
+          <td><span class="l">長</span></td>
+          <td>2019/05/30<br>ｼﾞｬﾊﾟﾝｵｰﾌﾟﾝ2019(50m)</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:21.69</td>
+          <td><span class="l">長</span></td>
+          <td>2019/05/30<br>ｼﾞｬﾊﾟﾝｵｰﾌﾟﾝ2019(50m)</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:22.49</td>
+          <td><span class="l">長</span></td>
+          <td>2019/05/30<br>ｼﾞｬﾊﾟﾝｵｰﾌﾟﾝ2019(50m)</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">100Fly</span></td>
+          <td>0:54.17</td>
+          <td><span class="l">長</span></td>
+          <td>2019/04/02<br>第95回日本選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:57.78</td>
+          <td><span class="l">長</span></td>
+          <td>2019/04/02<br>第95回日本選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="Fly">200Fly</span></td>
+          <td>1:58.82</td>
+          <td><span class="l">長</span></td>
+          <td>2019/04/02<br>第95回日本選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">200IM</span></td>
+          <td>2:03.40</td>
+          <td><span class="l">長</span></td>
+          <td>2019/04/02<br>第95回日本選手権</td>
+        </tr>
+
+        <tr>
+          <td><span class="IM">400IM</span></td>
+          <td>4:20.81</td>
+          <td><span class="l">長</span></td>
+          <td>2019/04/02<br>第95回日本選手権</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+  <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0
+      58-18 88-18s
+      58 18 88 18
+      58-18 88-18
+      58 18 88 18
+      v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+      <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1" />
+      <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa" />
+    </g>
+  </svg>
+  <div id="footer">
+    <p>Created by Reo Kanzaki</p>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+    var colorLong = '#1B98E0';
+    var colorShort = '#06A77D';
+    var tDegree = '29'
+    var gray = '#555';
+    var lineWidth = 0.7;
+
+    var ctxRadar = document.getElementById("radar").getContext('2d');
+    var dataLong = [0, 0, 0, 18, 14];
+    var dataShort = [2, 0, 0, 4, 2];
+    var radarConfig = {
+      type: 'radar',
+      data: {
+        labels: ['Fr', 'Ba', 'Br', 'Fly', 'IM'],
+        datasets: [{
+          data: dataLong,
+          label: '長水',
+          borderColor: colorLong,
+          pointBorderColor: colorLong,
+          backgroundColor: colorLong + tDegree,
+          pointBackgroundColor: colorLong + tDegree,
+          borderWidth: lineWidth,
+          pointBorderWidth: lineWidth
+        }, {
+          data: dataShort,
+          label: '短水',
+          borderColor: colorShort,
+          pointBorderColor: colorShort,
+          backgroundColor: colorShort + tDegree,
+          pointBackgroundColor: colorShort + tDegree,
+          borderWidth: lineWidth,
+          pointBorderWidth: lineWidth
+        }]
+      },
+      options: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            fontSize: 10
+          }
+        },
+        scale: {
+          pointLabels: {
+            fontSize: 10,
+            fontColor: gray,
+          },
+          ticks: {
+            fontColor: gray,
+            suggestedMin: 0,
+            max: 15,
+            stepSize: 5,
+          },
+          gridLines: {
+            color: gray,
+            lineWidth: 0.5
+          },
+          angleLines: {
+            color: gray,
+            lineWidth: 0.5
+          }
+        }
+      }
+    };
+    var radar = new Chart(ctxRadar, radarConfig);
+
+    var jMonths = ['4', '5', '6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4'];
+    var colorE1 = '#CD6CFF';
+    var colorE2 = '#F4376E';
+    var ctxLine = document.getElementById("lineChart").getContext('2d');
+    var e1Long = [{x:1,y:100},{x:59,y:79},{x:96,y:0},{x:110,y:32},{x:123,y:47},{x:131,y:69},{x:158,y:54}];
+    var e1Short = [{x:89,y:50}];
+    var e2Long = [{x:1,y:100},{x:59,y:87},{x:96,y:60},{x:123,y:15},{x:131,y:0},{x:158,y:79}];
+    var e2Short = [];
+    var datasets = [{
+        label: '長水路 200Fly',
+        data: e1Long,
+        pointStyle: 'circle',
+        borderColor: colorE1,
+        backgroundColor: colorE1 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '短水路 200Fly',
+        data: e1Short,
+        pointStyle: 'triangle',
+        borderColor: colorE1,
+        backgroundColor: colorE1 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '長水路 400IM',
+        data: e2Long,
+        pointStyle: 'circle',
+        borderColor: colorE2,
+        backgroundColor: colorE2 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      },
+      {
+        label: '短水路 400IM',
+        data: e2Short,
+        pointStyle: 'triangle',
+        borderColor: colorE2,
+        backgroundColor: colorE2 + tDegree,
+        showLine: true,
+        borderWidth: lineWidth,
+      }
+    ];
+
+    var lineConfig = {
+      type: 'scatter',
+      data: {
+        datasets: datasets
+      },
+      options: {
+        // tooltips: {
+        //   enabled: false
+        // },
+        elements: {
+          line: {
+            tension: 0
+          },
+        },
+        legend: {
+          position: 'bottom',
+        },
+        scales: {
+          xAxes: [{
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 365,
+              stepSize: 1,
+              autoSkip: false,
+              maxRotation: 0,
+              callback: function(value, index, values) {
+                // 4月1日からの経過日数リスト。これらは各月の一日目。個人的に最高にイカしてる実装方法
+                var i = [0, 30, 61, 91, 122, 153, 183, 214, 244, 275, 306, 335, 365].indexOf(value);
+                if (i >= 0) {
+                  return jMonths[i]
+                } else {
+                  return null
+                }
+              }
+            },
+            gridLines: {
+              borderDash: [3],
+              zeroLineBorderDash: [3],
+              tickMarkLength: 8,
+              color: '#aaa',
+              zeroLineColor: '#aaa',
+              lineWidth: 0.5,
+              zeroLineWidth: 0.5,
+            }
+          }],
+          yAxes: [{
+            display: false,
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 105,
+              stepSize: 1,
+            }
+          }]
+        }
+      }
+    };
+    var myChart = new Chart(ctxLine, lineConfig);
+  </script>
+</body>
+
+</html>
