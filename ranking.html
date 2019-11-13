@@ -7,17 +7,17 @@
   <meta name="description" content="水泳選手の記録の分析を数百万の大会結果から出力します。">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/png" href="static/icon-192x192.png">
-  <link rel="apple-touch-icon" type="image/png" href="static/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="static/img/icon-192x192.png">
+  <link rel="apple-touch-icon" type="image/png" href="static/img/apple-touch-icon-180x180.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="static/common.css">
-  <link rel="stylesheet" href="static/ranking.css">
+  <link rel="stylesheet" href="static/css/common.css">
+  <link rel="stylesheet" href="static/css/ranking.css">
 </head>
 
 <body>
   <nav>
-    <a href="/"><img src="static/wlogo.svg" alt="Zero" id="logo"></a>
+    <a href="/"><img src="static/img/wlogo.svg" alt="Zero" id="logo"></a>
     <form id="search-container" method="post" action="/dashboard">
       <!-- とりあえず今はidでのみ検索できるように -->
       <input name="id" type="text" placeholder="選手を検索">
@@ -26,17 +26,9 @@
   </nav>
 
 
-
-    <div id="filter">
-      <p>Filter</p>
-      <div>
-        <a href="#">大学生のみ</a>
-      </div>
-    </div>
-
-
   <div id="header">
     <h1>Ranking</h1>
+    <p>―2019―</p>
 
     <div id="style-buttons">
       <div id="fr" class="row">
@@ -81,25 +73,30 @@
     </div>
 
     <div id="tab">
-      <div>
-        <a href="#" class="men">男子<br>短水路</a>
+      <div class="men">
+        <a href="#">男子<br>短水路</a>
       </div>
-      <div class="selected">
-        <a href="#" class="men">男子<br>長水路</a>
+      <div class="men selected">
+        <a href="#">男子<br>長水路</a>
       </div>
-      <div>
-        <a href="#" class="women">女子<br>短水路</a>
+      <div class="women">
+        <a href="#">女子<br>短水路</a>
       </div>
-      <div class="selected">
-        <a href="#" class="women">女子<br>長水路</a>
+      <div class="women">
+        <a href="#">女子<br>長水路</a>
       </div>
 
     </div>
   </div>
 
+  <div id="filter">
+    <p>Filter</p>
+    <div>
+      <a href="#">大学生のみ</a>
+    </div>
+  </div>
+
   <div id="caption">
-    <p>2019年4月~</p>
-    <p>男子 長水路</p>
     <h2>50m 自由形</h2>
   </div>
 
