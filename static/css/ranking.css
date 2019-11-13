@@ -193,7 +193,6 @@ table tr {
   border-bottom: 0.7px #ddd solid;
 }
 table tr td:nth-child(1) span {
-  background-color: var(--c-men);
   color: white;
   border-radius: 0 5px 5px 0;
   display: inline-block;
@@ -202,8 +201,16 @@ table tr td:nth-child(1) span {
   text-align: center;
   font-weight: bold;
 }
+table.men tr td:nth-child(1) span {
+  background-color: var(--c-men);
+}
+table.women tr td:nth-child(1) span {
+  background-color: var(--c-women);
+}
 table tr td:nth-child(2) {
   width: 27%;
+  line-height: 1;
+  /* padding-left: 8px; */
 }
 table tr td:nth-child(3) {
   width: 75px;
@@ -225,6 +232,9 @@ table tr td:nth-child(5) {
   font-size: 1.2rem;
   color: #aaa;
 }
-table tr:nth-child(2n) {
+table.men tr:nth-child(2n) {
   background-color: #fafafd;
+}
+table.women tr:nth-child(2n) {
+  background-color: #fdfafa;
 }
