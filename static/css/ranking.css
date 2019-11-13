@@ -44,6 +44,9 @@ body {
 
 
 /* セレクト */
+#style-buttons {
+  display: none;
+}
 #style-buttons .row {
   margin: 3px 10px;
   font-size: 1.5rem;
@@ -179,5 +182,46 @@ body {
 table * {
   text-decoration: none;
   color: black;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table tr {
+  height: 50px;
+  border-bottom: 0.7px #ddd solid;
+}
+table tr td:nth-child(1) span {
+  background-color: var(--c-men);
+  color: white;
+  border-radius: 0 5px 5px 0;
+  display: inline-block;
+  line-height: 25px;
+  width: 45px;
+  text-align: center;
+}
+table tr td:nth-child(2) {
+  width: 27%;
+}
+table tr td:nth-child(3) {
+  width: 75px;
+  font-weight: 550;
+  /* text-align: center; */
+}
+table tr td:nth-child(4) span {
+  font-size: 1.2rem;
+  background-color: rgb(61, 86, 96);
+  border-radius: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+}
+table tr td:nth-child(5) {
+  font-size: 1.2rem;
+  color: #aaa;
+
 }
