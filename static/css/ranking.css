@@ -175,3 +175,9 @@ body {
   height: 100%;
 
 }
+
+table * {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+}
