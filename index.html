@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" type="image/png" href="static/img/apple-touch-icon-180x180.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="static/css/odometer-theme-default.css">
   <link rel="stylesheet" href="static/css/home.css">
 </head>
 
@@ -20,6 +21,12 @@
     <p>ランクイン。</p>
   </div>
 
+  <div id="total">
+    <p class="odometer" id="target">0<p>
+  </div>
+
+
+
   <div id="ranking">
     <p>ランキングを見る</p>
     <div class="buttons">
@@ -27,6 +34,13 @@
       <div><a href="#">女子</a></div>
     </div>
   </div>
+  <script src="static/js/odometer.min.js"></script>
+  <script>
+    var odometer = document.getElementById("target");
+    window.onload = function() {
+      odometer.innerHTML = 1421048;
+    };
+  </script>
 </body>
 
 </html>
