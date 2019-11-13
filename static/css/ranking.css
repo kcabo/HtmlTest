@@ -202,7 +202,6 @@ table tr td:nth-child(3) {
 }
 table tr td:nth-child(4) span {
   font-size: 1.2rem;
-  background-color: rgb(61, 86, 96);
   border-radius: 5px;
   display: inline-block;
   width: 40px;
@@ -210,6 +209,12 @@ table tr td:nth-child(4) span {
   color: white;
   text-align: center;
   line-height: 25px;
+}
+table.women tr td:nth-child(4) span {
+  background-color: #EE90C5;
+}
+table.men tr td:nth-child(4) span {
+  background-color: #5FC5EA;
 }
 table tr td:nth-child(5) {
   font-size: 1.2rem;
@@ -240,9 +245,9 @@ table.women tr:nth-child(2n) {
 #pagination a.hidden {
   visibility: hidden;
 }
-#pagination.men a {
+.men + #pagination a {
   background-color: var(--c-men)
 }
-#pagination.women a {
+.women + #pagination a {
   background-color: var(--c-women)
 }
